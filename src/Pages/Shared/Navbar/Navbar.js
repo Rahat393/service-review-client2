@@ -17,7 +17,7 @@ const Navbar = () => {
         {navMenu}
       </ul>
     </div>
-    <Link to={'/'} className="btn btn-ghost normal-case text-xl">Polaraid</Link>
+    <Link to={'/'} className="btn btn-ghost normal-case text-3xl font-semibold text-primary">Polaraid</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
