@@ -1,6 +1,7 @@
 import React from 'react';
 import {   AiOutlineArrowRight } from 'react-icons/ai';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import SpinnerOval from '../../Shared/Spinner/SpinnerOval';
 import SServiceCard from './SServiceCard';
 
@@ -33,7 +34,7 @@ const ShortService = () => {
        }
     </div>
    <div className='flex justify-center mb-10'>
-   <button className="btn btn-secondary text-white">See all servics <AiOutlineArrowRight className='ml-2 font-bold'/></button>
+   <Link to={'/services'}><button className="btn btn-secondary text-white">See all servics <AiOutlineArrowRight className='ml-2 font-bold'/></button></Link>
    </div>
 
    </div>
