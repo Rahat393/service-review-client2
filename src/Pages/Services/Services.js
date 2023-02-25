@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import SpinnerOval from '../Shared/Spinner/SpinnerOval';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
-  const {data: services} = useQuery({
+  const {data: services, isLoading} = useQuery({
     queryKey: ['services'],
     queryFn: async () => {
       try{
@@ -15,7 +16,10 @@ const Services = () => {
 
       }
     }
-  })
+  });
+  if(isLoading){
+    return <SpinnerOval></SpinnerOval>
+  }
   return (
 
     <div>
