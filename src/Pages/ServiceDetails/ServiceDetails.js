@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import ReviewProvide from '../ReviewProvide/ReviewProvide';
-import ReviewSection from '../ReviewSection/ReviewSection';
+ import ReviewSection from '../ReviewSection/ReviewSection';
 
 const ServiceDetails = () => {
   const   [{price, titlle, img, description}] = useLoaderData()
-   
+ 
    
   return (
     <div className='mb-20'>
@@ -22,10 +21,17 @@ const ServiceDetails = () => {
 </div>
      <h1 className='text-3xl font-semibold mt-10'>Client Review </h1>
 
-     <ReviewSection></ReviewSection>
-     <ReviewProvide
+     <ReviewSection
+      titlle={titlle}
+     
+     >
+     </ReviewSection>
+
+
+     {/* <ReviewProvide
      titlle={titlle}
-     ></ReviewProvide>
+     refetch={refetch}
+     ></ReviewProvide> */}
     </div>
   );
 };

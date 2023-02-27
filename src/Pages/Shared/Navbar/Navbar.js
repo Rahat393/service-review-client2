@@ -9,11 +9,15 @@ const Navbar = () => {
     .then(() => { })
      .catch(err => console.log(err))
 }
-  console.log( 'nnn',user);
+  // console.log( 'nnn',user);
   const navMenu = <>
       <li><Link to={'/'}>Home</Link></li>
       { user?.uid ?
+        <>
+        <li><Link to={'/myreview'}>My Review</Link></li>
+        <li><Link to={'/addsevice'}>Add Service</Link></li>
         <li><button onClick={handleLogOut}>Sign Out</button></li>
+        </>
       :
         <li><Link to={'/login'}>SignIn</Link></li>}
   </>

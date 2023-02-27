@@ -4,10 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
  
 const SignUp = () => {
-  const {createUser} =  useContext(AuthContext) 
+   
+  const {createUser, updateUser} =  useContext(AuthContext) 
   const [signUpError, setSignUPError] = useState('')
-
-
+ 
   const navigate = useNavigate()
 
   const handleSignUp = event => {
@@ -17,13 +17,21 @@ const SignUp = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    // console.log(name, email, password);
 
-    createUser(email, password)
+    createUser( email, password)
     .then(result => {
       const user = result.user;
       console.log(user);
       toast.success('User Create Successfully')
+      const userInfo = {
+         name
+      };
+      updateUser(userInfo)
+          .then(() => {
+             
+          })
+          .then((err) => console.log(err));
       navigate('/')
     })
     .catch(err => {
