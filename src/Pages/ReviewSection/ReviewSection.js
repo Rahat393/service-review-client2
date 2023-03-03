@@ -3,12 +3,13 @@ import { toast } from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import SpinnerOval from '../Shared/Spinner/SpinnerOval';
 import ReviewCard from './ReviewCard';
 
 const ReviewSection = ({titlle  }) => {
    const {user} = useContext(AuthContext)
   //  console.log('user', user);
-  const {data: reviews, refetch} = useQuery({
+  const {data: reviews, refetch, isLoading} = useQuery({
     queryKey: ['review'],
     queryFn: async() =>  {
         try{
@@ -56,6 +57,10 @@ const ReviewSection = ({titlle  }) => {
                
           }
            })
+      }
+
+      if(isLoading){
+        return <SpinnerOval></SpinnerOval>
       }
   return (
     <div>

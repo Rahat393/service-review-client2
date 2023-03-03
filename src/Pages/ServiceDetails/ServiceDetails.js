@@ -27,11 +27,6 @@ const ServiceDetails = () => {
      >
      </ReviewSection>
 
-
-     {/* <ReviewProvide
-     titlle={titlle}
-     refetch={refetch}
-     ></ReviewProvide> */}
     </div>
   );
 };
